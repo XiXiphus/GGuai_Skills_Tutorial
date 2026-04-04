@@ -1,0 +1,28 @@
+        :root {
+            --primary: #2c3e50;
+            --secondary: #8b7355;
+            --accent: #e8f4f8;
+            --bg-warm: #faf8f5;
+            --bg-card: #ffffff;
+            --text-primary: #2c3e50;
+            --text-secondary: #5a6c7d;
+            --text-muted: #8b9aad;
+            --border: #e5e0d8;
+            --success: #5a8f6e;
+            --highlight: #f5f0e8;
+            --shadow: 0 2px 12px rgba(0,0,0,0.06);
+            --shadow-hover: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-warm);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }

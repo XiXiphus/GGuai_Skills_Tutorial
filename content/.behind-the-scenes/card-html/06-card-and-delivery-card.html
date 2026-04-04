@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --text: #1f2730;
+    --muted: #66717d;
+    --soft: #8d97a3;
+    --rule: #d9e0e8;
+    --accent: #4A4A4A;
+    --accent-soft: rgba(74,74,74,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; background: var(--bg); color: var(--text); font-family: "KingHwa_OldSong", "Noto Serif CJK SC", "Noto Sans CJK SC", serif; }
+  .card { width: 1080px; padding: 56px 72px 44px; }
+  .meta { display: flex; justify-content: space-between; font-size: 16px; letter-spacing: 0.16em; color: var(--soft); text-transform: uppercase; margin-bottom: 28px; }
+  .title { font-size: 78px; line-height: 1.0; letter-spacing: -0.04em; font-weight: 750; margin-bottom: 20px; }
+  .subtitle { font-size: 30px; line-height: 1.72; color: #4e5965; max-width: 780px; margin-bottom: 44px; }
+  .rule { height: 1px; background: var(--rule); margin-bottom: 36px; }
+  .highlight { margin: 0 0 36px; padding: 20px 26px 22px 30px; border-left: 4px solid var(--accent); background: linear-gradient(90deg, rgba(74,74,74,0.05), transparent); }
+  .highlight p { font-size: 40px; line-height: 1.48; font-weight: 650; margin: 0; }
+  .body p { font-size: 29px; line-height: 1.86; margin-bottom: 18px; }
+  .checks { margin: 28px 0 30px; }
+  .check { padding: 18px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 42px minmax(0,1fr); gap: 14px; align-items: baseline; }
+  .check:last-child { border-bottom: none; }
+  .check-icon { font-size: 26px; color: var(--accent); text-align: center; }
+  .check-text { font-size: 28px; line-height: 1.72; }
+  .modes { margin: 28px 0 34px; }
+  .mode { display: grid; grid-template-columns: 120px minmax(0,1fr); gap: 20px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .mode:last-child { border-bottom: none; }
+  .mode-name { font: 600 26px/1.3 "SFMono-Regular", "Menlo", monospace; color: var(--accent); }
+  .mode-desc { font-size: 27px; line-height: 1.72; }
+  .selfcheck { margin: 32px 0; padding: 22px 28px; background: rgba(74,74,74,0.04); border-left: 3px solid var(--rule); }
+  .selfcheck p { font-size: 30px; line-height: 1.7; font-weight: 500; margin: 0; }
+  .footer { display: flex; justify-content: space-between; margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 18px; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="meta"><span>GF Skills Course</span><span>Lesson 6</span></div>
+    <div class="title">卡片是交付</div>
+    <div class="subtitle">先把事情想清楚，再把它压成一张能传播的单位。</div>
+    <div class="rule"></div>
+    <div class="highlight"><p>卡片不是思考。<br>卡片是思考完成之后的交付。</p></div>
+    <div class="body"><p class="muted">做卡片之前，先过三个检查：</p></div>
+    <div class="checks">
+      <div class="check"><div class="check-icon">①</div><div class="check-text"><strong>思考完成了吗？</strong> 还在纠结就先写笔记，等观点稳定再做卡。</div></div>
+      <div class="check"><div class="check-icon">②</div><div class="check-text"><strong>有公共价值吗？</strong> 别人看了也可能受益的，才值得做卡。</div></div>
+      <div class="check"><div class="check-icon">③</div><div class="check-text"><strong>密度够吗？</strong> 一句话够的发文字；需要展开但不超 400 字的，做卡。</div></div>
+    </div>
+    <div class="modes">
+      <div class="mode"><div class="mode-name">-l 长图</div><div class="mode-desc">带层次的理解。从问题到答案，像一篇微型文章。</div></div>
+      <div class="mode"><div class="mode-name">-i 信息图</div><div class="mode-desc">关系复杂的结构。3 秒抓住骨架。</div></div>
+      <div class="mode"><div class="mode-name">-m 多卡</div><div class="mode-desc">切面太多的主题。每张讲透一个点。</div></div>
+    </div>
+    <div class="selfcheck"><p>自检：如果这张图被陌生人转发，他能不看上下文就懂吗？能，就对了。</p></div>
+    <div class="footer"><span>不是魔法，是工法。</span><span>GF Skills Course</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "skills-course",
+  "version": "1.0.0",
+  "description": "这是一套给零基础伴侣使用的「命令行里的智能体 + ljg-skills」课程骨架。",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run check:course",
+    "check:course": "node scripts/check-course-structure.mjs && node scripts/smoke-course-logic.mjs",
+    "dev": "concurrently \"npm run dev:terminal\" \"npm run dev:vite\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "preview:lan": "vite preview",
+    "teach": "npm run build && concurrently \"npm run dev:terminal\" \"npm run preview\"",
+    "dev:vite": "vite",
+    "dev:terminal": "node server/terminal-server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "vite": "^8.0.3"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "concurrently": "^9.2.1",
+    "marked": "^17.0.5",
+    "node-pty": "^1.1.0",
+    "ws": "^8.20.0",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0",
+    "xterm-addon-web-links": "^0.9.0"
+  }
+}

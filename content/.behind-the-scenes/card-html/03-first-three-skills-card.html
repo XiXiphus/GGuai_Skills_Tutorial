@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --text: #1f2730;
+    --muted: #66717d;
+    --soft: #8d97a3;
+    --rule: #d9e0e8;
+    --accent: #3D5A80;
+    --c-rank: #3D5A80;
+    --c-plain: #2D6A4F;
+    --c-learn: #9A5B2F;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; background: var(--bg); color: var(--text); font-family: "KingHwa_OldSong", "Noto Serif CJK SC", "Noto Sans CJK SC", serif; }
+  .card { width: 1080px; padding: 56px 72px 44px; }
+  .meta { display: flex; justify-content: space-between; font-size: 16px; letter-spacing: 0.16em; color: var(--soft); text-transform: uppercase; margin-bottom: 28px; }
+  .title { font-size: 76px; line-height: 1.0; letter-spacing: -0.04em; font-weight: 750; margin-bottom: 20px; }
+  .subtitle { font-size: 28px; line-height: 1.72; color: #4e5965; max-width: 800px; margin-bottom: 40px; }
+  .rule { height: 1px; background: var(--rule); margin-bottom: 36px; }
+  .highlight { margin: 0 0 38px; padding: 20px 26px 22px 30px; border-left: 4px solid var(--accent); background: linear-gradient(90deg, rgba(61,90,128,0.06), transparent); }
+  .highlight p { font-size: 38px; line-height: 1.5; font-weight: 650; margin: 0; }
+  .tools { display: grid; grid-template-columns: 1fr; gap: 0; margin: 0 0 34px; }
+  .tool { padding: 26px 0; border-bottom: 1px solid var(--rule); }
+  .tool:last-child { border-bottom: none; }
+  .tool-head { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+  .chip { display: inline-block; padding: 6px 14px 7px; border-radius: 999px; font: 600 22px/1.3 "SFMono-Regular", "Menlo", monospace; letter-spacing: -0.01em; }
+  .chip-rank { background: rgba(61,90,128,0.12); color: var(--c-rank); }
+  .chip-plain { background: rgba(45,106,79,0.12); color: var(--c-plain); }
+  .chip-learn { background: rgba(154,91,47,0.12); color: var(--c-learn); }
+  .tool-label { font: 600 28px/1.4 "KingHwa_OldSong", "Noto Serif CJK SC", serif; color: var(--text); }
+  .tool-desc { font-size: 27px; line-height: 1.75; color: var(--muted); margin-bottom: 8px; }
+  .tool-when { font-size: 25px; line-height: 1.6; color: var(--text); }
+  .tool-when strong { font-weight: 600; }
+  .table-wrap { margin: 28px 0; background: rgba(255,255,255,0.5); padding: 20px 24px; }
+  table { width: 100%; border-collapse: collapse; font-size: 26px; line-height: 1.6; }
+  th { text-align: left; font-weight: 600; color: var(--soft); padding: 10px 0; border-bottom: 2px solid var(--rule); font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; }
+  td { padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--text); }
+  tr:last-child td { border-bottom: none; }
+  .closing { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--rule); }
+  .closing .final { font-size: 36px; line-height: 1.55; font-weight: 650; }
+  .footer { display: flex; justify-content: space-between; margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 18px; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="meta"><span>GF Skills Course</span><span>Lesson 3</span></div>
+    <div class="title">三把刀，切同一个问题</div>
+    <div class="subtitle">同一个概念，三种不同的看法。不是功能重叠，是每把刀看的层不一样。</div>
+    <div class="rule"></div>
+    <div class="highlight"><p>信息太多用 rank。<br>术语绕晕用 plain。<br>懂了但无聊用 learn。</p></div>
+    <div class="tools">
+      <div class="tool">
+        <div class="tool-head"><span class="chip chip-rank">ljg-rank</span><span class="tool-label">找骨架</span></div>
+        <div class="tool-desc">不是总结要点，是砍到不能再砍的生成器。</div>
+        <div class="tool-when"><strong>什么时候用：</strong>因素太多理不清，想找到支点。</div>
+      </div>
+      <div class="tool">
+        <div class="tool-head"><span class="chip chip-plain">ljg-plain</span><span class="tool-label">讲人话</span></div>
+        <div class="tool-desc">不是降智，是剥去术语伪装，让意思落地。</div>
+        <div class="tool-when"><strong>什么时候用：</strong>被术语绕晕，要讲得别人能懂。</div>
+      </div>
+      <div class="tool">
+        <div class="tool-head"><span class="chip chip-learn">ljg-learn</span><span class="tool-label">多挖一层</span></div>
+        <div class="tool-desc">不是堆知识，是找到那个"啊哈"时刻。</div>
+        <div class="tool-when"><strong>什么时候用：</strong>懂了但想找到新意，准备分享。</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>你的状态</th><th>先调哪把</th></tr>
+        <tr><td>信息太多理不清</td><td>ljg-rank</td></tr>
+        <tr><td>被术语绕晕</td><td>ljg-plain</td></tr>
+        <tr><td>懂了但无聊</td><td>ljg-learn</td></tr>
+        <tr><td>完全陌生</td><td>先别用 skill</td></tr>
+      </table>
+    </div>
+    <div class="closing"><p class="final">以前你可能总是拿错刀。</p></div>
+    <div class="footer"><span>不是魔法，是工法。</span><span>GF Skills Course</span></div>
+  </div>
+</body>
+</html>

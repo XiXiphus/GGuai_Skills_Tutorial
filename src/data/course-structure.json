@@ -1,0 +1,298 @@
+{
+  "sections": [
+    {
+      "id": "home",
+      "title": "叽乖技能课",
+      "nav": {
+        "itemId": "nav-home",
+        "label": "Home",
+        "number": "🏠",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "always"
+      }
+    },
+    {
+      "id": "lesson1",
+      "title": "Lesson 01 · Skill 初识",
+      "lessonNumber": 1,
+      "nav": {
+        "itemId": "nav-lesson1",
+        "label": "Skill 初识",
+        "number": "01",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "always"
+      }
+    },
+    {
+      "id": "lesson2",
+      "title": "Lesson 02 · Prompt 五维",
+      "lessonNumber": 2,
+      "nav": {
+        "itemId": "nav-lesson2",
+        "label": "Prompt 五维",
+        "number": "02",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1]
+      }
+    },
+    {
+      "id": "lesson3",
+      "title": "Lesson 03 · Three Tools",
+      "lessonNumber": 3,
+      "nav": {
+        "itemId": "nav-lesson3",
+        "label": "Three Tools",
+        "number": "03",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1, 2]
+      }
+    },
+    {
+      "id": "lesson4",
+      "title": "Lesson 04 · Four Inputs",
+      "lessonNumber": 4,
+      "nav": {
+        "itemId": "nav-lesson4",
+        "label": "Four Inputs",
+        "number": "04",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1, 2, 3]
+      }
+    },
+    {
+      "id": "lesson5",
+      "title": "Lesson 05 · Writes 心法",
+      "lessonNumber": 5,
+      "nav": {
+        "itemId": "nav-lesson5",
+        "label": "Writes 心法",
+        "number": "05",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1, 2, 3, 4]
+      }
+    },
+    {
+      "id": "lesson6",
+      "title": "Lesson 06 · Card 成器",
+      "lessonNumber": 6,
+      "nav": {
+        "itemId": "nav-lesson6",
+        "label": "Card 成器",
+        "number": "06",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1, 2, 3, 4, 5]
+      }
+    },
+    {
+      "id": "lesson7",
+      "title": "Lesson 07 · Workflow 成链",
+      "lessonNumber": 7,
+      "nav": {
+        "itemId": "nav-lesson7",
+        "label": "Workflow 成链",
+        "number": "07",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1, 2, 3, 4, 5, 6]
+      }
+    },
+    {
+      "id": "lesson8",
+      "title": "Lesson 08 · Mastery 初成",
+      "lessonNumber": 8,
+      "nav": {
+        "itemId": "nav-lesson8",
+        "label": "Mastery 初成",
+        "number": "08",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1, 2, 3, 4, 5, 6, 7]
+      }
+    },
+    {
+      "id": "lesson9",
+      "title": "Lesson 09 · Wiring 洞见",
+      "lessonNumber": 9,
+      "nav": {
+        "itemId": "nav-lesson9",
+        "label": "Wiring 洞见",
+        "number": "09",
+        "hiddenUntilUnlocked": true,
+        "revealToast": "你已经走完了前八课。最后一课解锁了 —— 去看看系统背后的布线。"
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    {
+      "id": "electives",
+      "title": "Electives · 进阶技能地图",
+      "footerNavigation": false,
+      "nav": {
+        "itemId": "nav-electives",
+        "label": "Electives",
+        "number": "🗺️",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "always"
+      }
+    },
+    {
+      "id": "capstone",
+      "title": "Capstone · 毕业项目",
+      "nav": {
+        "itemId": "nav-capstone",
+        "label": "Capstone",
+        "number": "🎓",
+        "hiddenUntilUnlocked": true,
+        "revealToast": "全部课程完成。毕业项目已解锁 —— 用你学会的那套章法，真刀真枪做一件事吧。"
+      },
+      "unlock": {
+        "type": "completedLessons",
+        "lessons": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      }
+    },
+    {
+      "id": "cards",
+      "title": "Gallery · 九课卡片墙",
+      "footerNavigation": false,
+      "nav": {
+        "itemId": "nav-cards",
+        "label": "九课卡片墙",
+        "number": "🎴",
+        "hiddenUntilUnlocked": false
+      },
+      "unlock": {
+        "type": "always"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "lesson": 1,
+      "title": "Skill 初识 · 何为技能",
+      "image": "./cards/01-skill-intro.png"
+    },
+    {
+      "lesson": 2,
+      "title": "Prompt 五维 · 开口成章",
+      "image": "./cards/02-ask-well.png"
+    },
+    {
+      "lesson": 3,
+      "title": "Three Tools · 三刃初磨",
+      "image": "./cards/03-three-tools.png"
+    },
+    {
+      "lesson": 4,
+      "title": "Four Inputs · 因料施策",
+      "image": "./cards/04-four-inputs.png"
+    },
+    {
+      "lesson": 5,
+      "title": "Writes 心法 · 对影成文",
+      "image": "./cards/05-writing.png"
+    },
+    {
+      "lesson": 6,
+      "title": "Card 成器 · 铸图为证",
+      "image": "./cards/06-card-delivery.png"
+    },
+    {
+      "lesson": 7,
+      "title": "Workflow 成链 · 三步成径",
+      "image": "./cards/07-workflows.png"
+    },
+    {
+      "lesson": 8,
+      "title": "Mastery 初成 · 结课启程",
+      "image": "./cards/08-toolbox.png"
+    },
+    {
+      "lesson": 9,
+      "title": "Wiring 洞见 · 看见布线",
+      "image": "./cards/09-see-the-wires.png"
+    }
+  ],
+  "exercises": {
+    "lesson1": [
+      { "id": "lesson1-q1", "type": "subjective" },
+      { "id": "lesson1-q2", "type": "subjective" },
+      { "id": "lesson1-q3", "type": "choice" },
+      { "id": "lesson1-q4", "type": "choice" }
+    ],
+    "lesson2": [
+      { "id": "lesson2-q1", "type": "subjective" },
+      { "id": "lesson2-q2", "type": "subjective" },
+      { "id": "lesson2-q3", "type": "choice" },
+      { "id": "lesson2-q4", "type": "subjective" }
+    ],
+    "lesson3": [
+      { "id": "lesson3-q1", "type": "subjective" },
+      { "id": "lesson3-q2", "type": "subjective" },
+      { "id": "lesson3-q3", "type": "details-read" },
+      { "id": "lesson3-q4", "type": "details-read" },
+      { "id": "lesson3-q5", "type": "details-read" },
+      { "id": "lesson3-q6", "type": "details-read" },
+      { "id": "lesson3-q7", "type": "details-read" },
+      { "id": "lesson3-q8", "type": "details-read" }
+    ],
+    "lesson4": [
+      { "id": "lesson4-q1", "type": "details-read" },
+      { "id": "lesson4-q2", "type": "details-read" },
+      { "id": "lesson4-q3", "type": "details-read" },
+      { "id": "lesson4-q4", "type": "details-read" },
+      { "id": "lesson4-q5", "type": "subjective" }
+    ],
+    "lesson5": [
+      { "id": "lesson5-q1", "type": "subjective" },
+      { "id": "lesson5-q2", "type": "subjective" },
+      { "id": "lesson5-q3", "type": "subjective" }
+    ],
+    "lesson6": [
+      { "id": "lesson6-q1", "type": "subjective" },
+      { "id": "lesson6-q2", "type": "subjective" }
+    ],
+    "lesson7": [
+      { "id": "lesson7-q1", "type": "subjective" },
+      { "id": "lesson7-q2", "type": "subjective" }
+    ],
+    "lesson8": [
+      { "id": "lesson8-q1", "type": "subjective" },
+      { "id": "lesson8-q2", "type": "subjective" },
+      { "id": "lesson8-q3", "type": "choice" },
+      { "id": "lesson8-q4", "type": "choice" },
+      { "id": "lesson8-q5", "type": "choice" },
+      { "id": "lesson8-q6", "type": "subjective" }
+    ],
+    "lesson9": [
+      { "id": "lesson9-q1", "type": "subjective" },
+      { "id": "lesson9-q2", "type": "subjective" }
+    ]
+  }
+}

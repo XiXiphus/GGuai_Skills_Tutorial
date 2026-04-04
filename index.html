@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>叽乖技能课 · 智能体从零到会用</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">叽乖技能课</div>
+                <div class="logo-sub">手把手，把智能体技能用顺手</div>
+            </div>
+
+            <nav class="nav-section">
+                <div class="nav-title">课程导航</div>
+                <ul class="nav-list">
+                    <li class="nav-item" id="nav-home">
+                        <a class="nav-link active" href="#" data-action="show-section" data-section="home">
+                            <span class="nav-number">🏠</span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-lesson1">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson1">
+                            <span class="nav-number">01</span>
+                            <span>Skill 初识</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-lesson2">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson2">
+                            <span class="nav-number">02</span>
+                            <span>Prompt 五维</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-lesson3">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson3">
+                            <span class="nav-number">03</span>
+                            <span>Three Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-lesson4">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson4">
+                            <span class="nav-number">04</span>
+                            <span>Four Inputs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-lesson5">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson5">
+                            <span class="nav-number">05</span>
+                            <span>Writes 心法</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-lesson6">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson6">
+                            <span class="nav-number">06</span>
+                            <span>Card 成器</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-lesson7">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson7">
+                            <span class="nav-number">07</span>
+                            <span>Workflow 成链</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-lesson8">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson8">
+                            <span class="nav-number">08</span>
+                            <span>Mastery 初成</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-hidden" id="nav-lesson9">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="lesson9">
+                            <span class="nav-number">09</span>
+                            <span>Wiring 洞见</span>
+                            <span class="check-icon">✓</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <nav class="nav-section">
+                <div class="nav-title">更多内容</div>
+                <ul class="nav-list">
+                    <li class="nav-item" id="nav-electives">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="electives">
+                            <span class="nav-number">🗺️</span>
+                            <span>Electives</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-hidden" id="nav-capstone">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="capstone">
+                            <span class="nav-number">🎓</span>
+                            <span>Capstone</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-cards">
+                        <a class="nav-link" href="#" data-action="show-section" data-section="cards">
+                            <span class="nav-number">🎴</span>
+                            <span>九课卡片墙</span>
+                            <span class="card-badge" id="card-badge">0/9</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div style="padding: 16px 20px; border-top: 1px solid var(--border); margin-top: auto;">
+                <button class="btn btn-secondary" style="width: 100%; font-size: 0.85rem; justify-content: center;"
+                    onclick="openApiKeyModal()">
+                    ⚙️ 配置 Kimi API
+                </button>
+            </div>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header" style="justify-content: flex-start; gap: 16px;">
+                <button class="btn btn-secondary" id="prev-lesson-btn" data-action="prev-section" style="padding: 6px 12px; font-size: 0.9rem;">← 上一课</button>
+                <h1 class="header-title" id="page-title" style="margin: 0;">叽乖技能课</h1>
+            </div>
+
+            <div class="content-body" id="content-body">
+                <!-- Sections will be loaded here -->
+            </div>
+
+            <div class="content-footer" id="content-footer" style="text-align: center; padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 40px;">
+                <button class="btn btn-primary" id="next-lesson-btn" data-action="next-section" style="padding: 12px 36px; font-size: 1.1rem; border-radius: 30px; box-shadow: var(--shadow);">下一课 →</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal-overlay" id="imageModal" onclick="closeModal()">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <img src="" alt="" class="modal-image" id="modalImage">
+        </div>
+    </div>
+
+
+
+    <!-- Terminal Panel -->
+    <div id="terminal-panel">
+        <div id="terminal-resizer"></div>
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <span>>_</span>
+                <span>Terminal</span>
+            </div>
+            <div class="terminal-actions">
+                <button class="terminal-btn" data-action="toggle-terminal" title="Close Terminal (Ctrl+\`)">✕</button>
+            </div>
+        </div>
+        <div id="terminal-container"></div>
+    </div>
+
+    <!-- Floating Terminal Button -->
+    <button class="terminal-toggle-btn" data-action="toggle-terminal" title="Toggle Terminal (Ctrl+\`)">
+        >_
+    </button>
+
+    <script type="module" src="/src/main.js"></script>
+
+
+
+    <!-- API Key Modal -->
+    <div class="modal-overlay" id="apiKeyModal" onclick="if(event.target===this) closeApiKeyModal()">
+        <div class="modal-content" style="padding: 32px; max-width: 500px;">
+            <button class="modal-close" onclick="closeApiKeyModal()">×</button>
+            <h2 style="margin-bottom: 16px; font-family: 'Noto Serif SC', serif; color: var(--primary);">配置 Kimi API Key
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">配置后，主观题将由 Kimi 提供实时的 AI
+                评卷和多轮对话反馈。如果不配置，将显示静态参考答案。</p>
+            <input type="password" id="kimiApiKeyInput" placeholder="sk-..."
+                style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 24px; font-family: monospace;">
+            <div style="display: flex; justify-content: flex-end; gap: 12px;">
+                <button class="btn btn-secondary" onclick="closeApiKeyModal()">取消</button>
+                <button class="btn btn-primary" onclick="saveApiKey()">保存配置</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openApiKeyModal() {
+            const modal = document.getElementById('apiKeyModal');
+            const input = document.getElementById('kimiApiKeyInput');
+            input.value = localStorage.getItem('kimi_api_key') || '';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeApiKeyModal() {
+            document.getElementById('apiKeyModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function saveApiKey() {
+            const val = document.getElementById('kimiApiKeyInput').value.trim();
+            if (val) {
+                localStorage.setItem('kimi_api_key', val);
+            } else {
+                localStorage.removeItem('kimi_api_key');
+            }
+            closeApiKeyModal();
+        }
+        window.openApiKeyModal = openApiKeyModal;
+        window.closeApiKeyModal = closeApiKeyModal;
+        window.saveApiKey = saveApiKey;
+    </script>
+</body>
+
+</html>

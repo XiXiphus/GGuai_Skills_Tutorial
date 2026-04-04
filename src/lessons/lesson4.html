@@ -1,0 +1,155 @@
+<section class="lesson-section" id="lesson4">
+    <div class="lesson-header">
+        <span class="lesson-tag">Lesson 04</span>
+        <h1 class="lesson-title">Four Inputs · 因料施策</h1>
+        <p class="lesson-intro">手里拿的东西不同，第一句话也不同。<br>先分清入口，再决定用什么刀。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>同一件事，四种入口</h2>
+        <p>假设你现在想了解「为什么人会拖延」。你可以从四个不同的地方进来：</p>
+
+        <h3>入口一：File</h3>
+        <p>你下载了一本《拖延心理学》的 PDF。</p>
+        <ul>
+            <li><strong>不太好的开口方式：</strong>「你看一下这个文件」</li>
+            <li><strong>更好的开口方式：</strong>「这是一本关于拖延的书，我想先知道它最核心的三个观点是什么，不要细节」</li>
+        </ul>
+        <p>为什么更好？因为你说清了你的位置：我刚拿到一本厚的，我需要先知道骨架，而不是被细节淹没。</p>
+
+        <h3>入口二：URL</h3>
+        <p>朋友发你一篇文章链接。</p>
+        <ul>
+            <li><strong>不太好的开口方式：</strong>「总结一下这篇文章」</li>
+            <li><strong>更好的开口方式：</strong>「这篇文章讲拖延，我想知道作者反对什么常见说法，以及他提出的替代观点」</li>
+        </ul>
+        <p>为什么更好？因为你给了 Agent 一个任务：不只是压缩内容，而是找出「对抗性」——作者在和什么较劲。</p>
+
+        <h3>入口三：Paste</h3>
+        <p>你在某个论坛看到一段写得很好的话，直接复制下来：</p>
+        <div class="code-block">「拖延不是时间管理问题，而是情绪调节问题。我们拖延是因为任务引发的情绪不舒服，而不是因为任务本身难。」</div>
+        <ul>
+            <li><strong>不太好的开口方式：</strong>「你怎么理解这段话」</li>
+            <li><strong>更好的开口方式：</strong>「这段话说拖延是情绪问题，我想知道：这个观点从哪里来？有什么证据或故事支撑？」</li>
+        </ul>
+
+        <h3>入口四：Concept</h3>
+        <p>你没有材料，就是突然想搞懂「拖延」这件事。</p>
+        <ul>
+            <li><strong>不太好的开口方式：</strong>「给我讲讲拖延」</li>
+            <li><strong>更好的开口方式：</strong>「我想理解拖延，但我不知道从哪里开始。你能先帮我列出这个主题下最常被误解的三个点吗？」</li>
+        </ul>
+    </div>
+
+    <div class="content-block">
+        <h2>一条最有代表性的处理链</h2>
+        <p>现在假设你手里有一篇长文（不管是 File、URL 还是 Paste），你想真正把它变成自己的理解。</p>
+        <p>这里有一条最稳的处理链：</p>
+        <div class="workflow-diagram">
+            <div class="workflow-step">Input</div>
+            <span class="workflow-arrow">→</span>
+            <div class="workflow-step"><span class="skill-tag">ljg-rank</span></div>
+            <span class="workflow-arrow">→</span>
+            <div class="workflow-step"><span class="skill-tag">ljg-plain</span></div>
+            <span class="workflow-arrow">→</span>
+            <div class="workflow-step"><span class="skill-tag">ljg-learn</span></div>
+        </div>
+
+        <h3>第一步：ljg-rank（先抓骨架）</h3>
+        <p>你对 Agent 说：</p>
+        <div class="code-block">「这篇文章讲拖延，帮我先抓骨架：如果只能用三个核心机制解释为什么人拖延，是哪三个？」</div>
+        <button class="try-btn" data-action="open-terminal" data-terminal-command="/ljg-rank 这篇文章讲拖延，帮我先抓骨架：如果只能用三个核心机制解释为什么人拖延，是哪三个？">试一试：先抓骨架</button>
+        <p><strong>为什么是这一步先？</strong>因为如果你一开始就让它「解释一下情绪调节理论」，你会陷入细节。先把骨架拎出来，你才知道整篇文章站在哪几块石头上。</p>
+        <p class="muted">注：这里的「抓骨架」就是 Lesson 03 说的「砍到几根硬支柱」——把复杂信息压到最不可再少的那几条。</p>
+
+        <h3>第二步：ljg-plain（说人话）</h3>
+        <p>现在你对 Agent 说：</p>
+        <div class="code-block">「用 ljg-plain 把刚才的三个机制讲给我听，假设我在给朋友转述，不要用术语」</div>
+        <p><strong>为什么这一步在中间？</strong>因为你刚刚拿到骨架，但骨架可能还带着术语。这一步是确保你真的能用自己的话讲出来，而不是背 definition。</p>
+
+        <h3>第三步：ljg-learn（再挖一层）</h3>
+        <p>最后你对 Agent 说：</p>
+        <div class="code-block">「对第二点『情绪调节』用 ljg-learn，我想知道：这个说法是什么时候被发现的？它推翻了什么旧观点？」</div>
+        <p><strong>为什么是这一步最后？</strong>因为如果你一开始就深挖，可能挖的是不重要的细节。现在你确认了骨架、确认了自己能讲出来，再选择最感兴趣的那个点往下挖，才是高效的。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>顺序为什么不能反？</h2>
+        <div class="highlight-box">
+            <p><strong>rank → plain → learn</strong> 的顺序，本质是让你先站稳，再往下跳。</p>
+        </div>
+    </div>
+
+    <!-- Exercise -->
+    <div class="exercise-section">
+        <h3 class="exercise-title">Lesson 04 Drill</h3>
+        <p class="exercise-subtitle">看菜下饭：不同材料怎么开口</p>
+
+        <h4 style="margin: 32px 0 16px; font-size: 1.1rem; color: var(--primary);">场景判断练习</h4>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">下面有四个场景，请判断：你怎么跟 Agent 开口？先调哪把 Skill？</p>
+
+        <div class="question-card">
+            <div class="question-number">1</div>
+            <p class="question-text"><strong>场景一：</strong>你有一份长达 50 页的行业年度报告 PDF，你想快速了解这个行业今年最大的三个变化。</p>
+            <details class="scenario-answer">
+                <summary>点击查看建议</summary>
+                <div class="scenario-content">
+                    <p><strong>输入方式：</strong>File 上传</p>
+                    <p><strong>第一步 Skill：</strong><span class="skill-tag">ljg-rank</span></p>
+                    <p><strong>开口建议：</strong>「这是今年的行业报告，请先用 ljg-rank 帮我找出今年最大的三个变化，只说骨架，不要细节。」</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="question-card">
+            <div class="question-number">2</div>
+            <p class="question-text"><strong>场景二：</strong>你在书上看到一段话：「自由不是想做什么就做什么，而是不想做什么就可以不做什么。」你觉得很有道理，想深挖一下。</p>
+            <details class="scenario-answer">
+                <summary>点击查看建议</summary>
+                <div class="scenario-content">
+                    <p><strong>输入方式：</strong>Paste 文本</p>
+                    <p><strong>第一步 Skill：</strong><span class="skill-tag">ljg-learn</span></p>
+                    <p><strong>开口建议：</strong>「这段话说[粘贴文本]，请用 ljg-learn 帮我深挖一下，这个观点在哲学史上是谁先提出来的？它的反面是什么？」</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="question-card">
+            <div class="question-number">3</div>
+            <p class="question-text"><strong>场景三：</strong>朋友发给你一篇很长的公众号文章链接，标题很耸动，你想知道它到底在说什么，有没有逻辑漏洞。</p>
+            <details class="scenario-answer">
+                <summary>点击查看建议</summary>
+                <div class="scenario-content">
+                    <p><strong>输入方式：</strong>URL 链接</p>
+                    <p><strong>第一步 Skill：</strong><span class="skill-tag">ljg-rank</span></p>
+                    <p><strong>开口建议：</strong>「这篇文章讲[主题]，请用 ljg-rank 帮我拆解它的核心逻辑链，并指出它可能回避了什么问题。」</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="question-card">
+            <div class="question-number">4</div>
+            <p class="question-text"><strong>场景四：</strong>你突然想搞懂「量子纠缠」到底是什么意思，但你完全没有物理学 background。</p>
+            <details class="scenario-answer">
+                <summary>点击查看建议</summary>
+                <div class="scenario-content">
+                    <p><strong>输入方式：</strong>直接提问（Concept）</p>
+                    <p><strong>第一步 Skill：</strong><span class="skill-tag">ljg-plain</span></p>
+                    <p><strong>开口建议：</strong>「我想理解『量子纠缠』，请用 ljg-plain 给我解释，假设我是一个完全不懂物理的高中生，给我一个生活中的类比。」</p>
+                </div>
+            </details>
+        </div>
+
+        <h4 style="margin: 32px 0 16px; font-size: 1.1rem; color: var(--primary);">综合设计题</h4>
+
+        <div class="question-card">
+            <div class="question-number">5</div>
+            <p class="question-text">你读到了一篇关于「如何建立个人知识库」的干货文章，觉得非常好，想把它彻底消化并做成一张卡片分享给朋友。请写出你的<strong>三步处理链</strong>（每一步用什么 Skill，以及对 Agent 说什么）。</p>
+            <textarea class="text-answer" placeholder="第一步：
+第二步：
+第三步："></textarea>
+            <button class="btn btn-primary" style="margin-top: 16px;" onclick="gradeSubjective(this, '第一步用 ljg-rank 提取文章核心骨架；第二步用 ljg-writes 把骨架变成自己对朋友说话的语气；第三步用 ljg-card 把文字压成卡片。')">提交回答</button>
+            <div class="ai-feedback"></div>
+        </div>
+    </div>
+</section>

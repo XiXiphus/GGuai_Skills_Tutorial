@@ -1,0 +1,160 @@
+/* Terminal Panel */
+#terminal-panel {
+    position: fixed;
+    bottom: 0;
+    left: 300px; /* Offset by sidebar width */
+    right: 0;
+    height: 300px;
+    background: #1e1e1e;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#terminal-panel.open {
+    transform: translateY(0);
+}
+
+/* Resizer handle */
+#terminal-resizer {
+    height: 6px;
+    background: #333;
+    cursor: ns-resize;
+    width: 100%;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+#terminal-resizer:hover,
+#terminal-resizer:active {
+    background: var(--secondary);
+}
+
+/* Header */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: #252526;
+    color: #cccccc;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 13px;
+    flex-shrink: 0;
+    border-bottom: 1px solid #333;
+}
+
+.terminal-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminal-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.terminal-btn {
+    background: transparent;
+    border: none;
+    color: #cccccc;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.terminal-btn:hover {
+    background: #333333;
+    color: white;
+}
+
+/* Container for xterm.js */
+#terminal-container {
+    flex: 1;
+    padding: 10px;
+    overflow: hidden;
+    background: #1e1e1e;
+}
+
+/* Floating Toggle Button */
+.terminal-toggle-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.terminal-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    background: #1a252f;
+}
+
+.terminal-toggle-btn:active {
+    transform: translateY(0);
+}
+
+/* Try It Button */
+.try-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--bg-warm);
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 12px 0;
+}
+
+.try-btn::before {
+    content: '▶';
+    color: var(--secondary);
+    font-size: 12px;
+}
+
+.try-btn:hover {
+    background: var(--highlight);
+    border-color: var(--secondary);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #terminal-panel {
+        left: 0;
+    }
+    
+    .terminal-toggle-btn {
+        bottom: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,157 @@
+<section class="lesson-section" id="lesson1">
+    <div class="lesson-header">
+        <span class="lesson-tag">Lesson 01</span>
+        <h1 class="lesson-title">Skill 初识 · 何为技能</h1>
+        <p class="lesson-intro">不是咒语，也不是「更高级的 prompt」。<br>是让 Agent 跟着一套稳当的 habit 来干活。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>开场：你可以先把它想成拍照</h2>
+        <p>你手机里一定有很多随手拍的照片。</p>
+        <p>下楼看到夕阳好看，掏出来按一张，这叫<strong>随口丢一句</strong>——轻快、即兴，拍完就完。</p>
+        <p>但如果今天要拍一组生日照，你可能会打开相机的「人像模式」，因为它会帮你自动虚化背景、调肤色、补光。你不用自己一条条参数去抠，mode 已经帮你把一套成熟的做法装进去了。这就像是<strong>调一个 Skill</strong>。</p>
+        <p>而如果你要策划一次三天旅行，想拍 vlog、拍美食、拍风景、最后拼成一支完整的片子，你就会按顺序调用好几个 mode，再剪辑在一起。这就叫<strong>把好几个 Skills 串成一条 Workflow</strong>。</p>
+        
+        <div class="highlight-box">
+            <p><strong>Skill 本身没什么神秘的。</strong>它更像是一种「省事捷径」：当你发现某件事总得按固定套路做，就把它交给 Agent，让它用对应的 Skill 来处理，少费口舌、少从头解释。</p>
+            <p class="muted">（不少产品里写作 Skill，说的是一回事。）</p>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <h2>三个层次，到底是什么感觉</h2>
+        
+        <h3>第一层：随口丢一句（Casual Ask）</h3>
+        <p>你想到什么就问什么。</p>
+        <ul>
+            <li>「这段英文帮我翻译一下。」</li>
+            <li>「这个词什么意思？」</li>
+            <li>「帮我写个请假理由。」</li>
+        </ul>
+        <p>好处是快，坏处是结果忽高忽低。今天翻译得顺，明天就可能太 formal、太生硬。因为它完全取决于你当时提问的方式，Agent 也只能凭经验猜你想要的风格。</p>
+
+        <h3>第二层：调一个 Skill（Skill Call）</h3>
+        <p>当你想要的是<strong>某种特定处理结果</strong>，而不是一个「差不多就行」的答案，就该想到 Skill。</p>
+        
+        <p><strong>例子 1：</strong>你看到一篇行业报告，术语满天飞，想发给完全外行的朋友看。</p>
+        <p>随口问可能得到一份「精简版」，但还是硬邦邦的。如果你调 <span class="skill-tag">ljg-plain</span>，它的工作方式本来就是「把复杂内容讲成普通人能懂的话」——你会得到一份更像「朋友口述」的版本。</p>
+
+        <p><strong>例子 2：</strong>你想研究「为什么现在的年轻人不爱换手机了」，刷到一堆零散分析，脑子很乱。</p>
+        <p>随口丢一句，Agent 可能给你罗列十条原因，但你还是抓不到重点。如果你调 <span class="skill-tag">ljg-rank</span>，它专治的就是「把现象砍到剩几根硬支柱」——帮你找出真正撑着这个问题的 3-4 股劲儿。</p>
+
+        <p><strong>例子 3：</strong>你读完一本书，想把一个打动你的观点做成可以发朋友圈的图。</p>
+        <p>随口让它写「帮我写段文案」，它可能写得很长、格式不对、也不像卡片。如果你调 <span class="skill-tag">ljg-card</span>，它会直接按做卡片的逻辑来组织文字：句子短、有重点、适合视觉呈现。</p>
+
+        <h3>第三层：把多个 Skills 串成 Workflow</h3>
+        <p>有时候一件事不是一步能搞定的。</p>
+        <p>比如你读到一篇很难的论文，想最后做成一张科普卡片发朋友圈。那你的 Workflow 可能是：</p>
+        <div class="workflow-diagram">
+            <div class="workflow-step"><span class="skill-tag">ljg-rank</span></div>
+            <span class="workflow-arrow">→</span>
+            <div class="workflow-step"><span class="skill-tag">ljg-plain</span></div>
+            <span class="workflow-arrow">→</span>
+            <div class="workflow-step"><span class="skill-tag">ljg-card</span></div>
+        </div>
+        <p>这就不是「调一个命令」了，而是你心里有了一条<strong>从小路到大道的高速公路</strong>。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>Skill 的真正价值：减少来回试错的次数</h2>
+        <p>很多人觉得 Skill 「很酷」或者「很高级」。其实不是。</p>
+        <p>它最大的价值是<strong>省口水、稳预期</strong>。你不用再从零跟 Agent 解释「我要你简短一点、口语一点、分点来说」——Skill 已经把这些偏好内化了。你就像是请了一位已经熟悉你风格的助手，而不是每次都要重新培训。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>什么时候该想到「要不要调个 Skill」</h2>
+        <p>这里给你一个轻量判断清单。如果下面任何一条中了，就值得想一想：</p>
+        <ul class="checklist">
+            <li><input type="checkbox"> 这个问题我上周好像也以类似方式问过 Agent。</li>
+            <li><input type="checkbox"> 我想要的不只是「答案」，而是<strong>已经收拾好的样子</strong>（简化版、骨架版、卡片版）。</li>
+            <li><input type="checkbox"> 我预感要跟 Agent 来回三四轮才能说清楚要求。</li>
+            <li><input type="checkbox"> 我想把这件事变成一个以后能重复用的 habit。</li>
+        </ul>
+        <p>不用全中，中一条就够了。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>本课小结</h2>
+        <p>Skill 不是咒语，不是更厉害的 prompt 模板。</p>
+        <div class="highlight-box">
+            <p><strong>它是：让 Agent 跟着你已经试顺、信得过的一套 habit 来干活。</strong></p>
+            <button class="try-btn" data-action="open-terminal" data-terminal-command="claude">试一试：打开 Terminal 里的编程助手</button>
+        </div>
+        <p>随口问是散步，调 Skill 是开车走高速，串 Workflow 是一次完整的旅行规划。后面我们要学的，就是怎么看清路况、选对高速、偶尔自己拼一条路线。</p>
+    </div>
+
+    <!-- Exercise -->
+    <div class="exercise-section">
+        <h3 class="exercise-title">Lesson 01 Drill</h3>
+        <p class="exercise-subtitle">确认理解 + 场景配对</p>
+
+        <div class="question-card">
+            <div class="question-number">1</div>
+            <p class="question-text">如果我只是临时问一句「今天晚上吃什么好」，这算「调 Skill」吗？为什么？</p>
+            <textarea class="text-answer" placeholder="在这里写下你的思考..."></textarea>
+            <button class="btn btn-primary" style="margin-top: 16px;" onclick="gradeSubjective(this, '不算。因为这只是一个随意的、不需要特定格式或深度处理的日常对话。调 Skill 是为了获得某种特定处理结果（如提炼骨架、翻译成大白话等）。')">提交回答</button>
+            <div class="ai-feedback"></div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-number">2</div>
+            <p class="question-text"><span class="skill-tag">ljg-rank</span> 和 <span class="skill-tag">ljg-plain</span> 大概解决的是哪两类不同的问题？</p>
+            <textarea class="text-answer" placeholder="用一句话分别概括它们的核心价值..."></textarea>
+            <button class="btn btn-primary" style="margin-top: 16px;" onclick="gradeSubjective(this, 'ljg-rank 解决的是「信息太杂，抓不住重点」的问题，帮你找出核心骨架；ljg-plain 解决的是「内容太硬，别人听不懂」的问题，帮你把复杂内容翻译成大白话。')">提交回答</button>
+            <div class="ai-feedback"></div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-number">3</div>
+            <p class="question-text"><strong>场景配对：</strong>读了一篇很绕的论文摘要，想发给完全外行的朋友看，让他也能懂个大概。</p>
+            <div class="answer-options">
+                <label class="option-label">
+                    <input type="radio" name="q3" value="a">
+                    <span>随口丢一句（不写 Skill 名）</span>
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q3" value="b">
+                    <span>调 ljg-rank</span>
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q3" value="c" data-correct="true">
+                    <span>调 ljg-plain</span>
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q3" value="d">
+                    <span>串一条 Workflow</span>
+                </label>
+            </div>
+            <button class="btn btn-primary" style="margin-top: 16px;" onclick="gradeChoice(this)">提交答案</button>
+            <div class="score-display" style="margin-top: 12px; font-weight: 600; display: none;"></div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-number">4</div>
+            <p class="question-text"><strong>场景配对：</strong>想分析「为什么这个博主的内容看起来很舒服」，网上有很多零散观点，自己想先抓到核心骨架。</p>
+            <div class="answer-options">
+                <label class="option-label">
+                    <input type="radio" name="q4" value="a">
+                    <span>随口丢一句（不写 Skill 名）</span>
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q4" value="b" data-correct="true">
+                    <span>调 ljg-rank</span>
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q4" value="c">
+                    <span>调 ljg-plain</span>
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q4" value="d">
+                    <span>串一条 Workflow</span>
+                </label>
+            </div>
+            <button class="btn btn-primary" style="margin-top: 16px;" onclick="gradeChoice(this)">提交答案</button>
+            <div class="score-display" style="margin-top: 12px; font-weight: 600; display: none;"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看见红线</title>
+<style>
+  :root {
+    --bg: #f3f5f8;
+    --panel: #f8fafc;
+    --text: #1f2730;
+    --muted: #66717d;
+    --soft: #8d97a3;
+    --rule: #d9e0e8;
+    --accent: #45627f;
+    --accent-soft: rgba(69, 98, 127, 0.10);
+    --shadow: rgba(45, 64, 84, 0.06);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    width: 1080px;
+    background:
+      radial-gradient(circle at top right, rgba(69, 98, 127, 0.07), transparent 28%),
+      linear-gradient(180deg, #f5f7fa 0%, var(--bg) 100%);
+    color: var(--text);
+    font-family: "KingHwa_OldSong", "Noto Serif CJK SC", "Noto Sans CJK SC", serif;
+  }
+
+  .card {
+    width: 1080px;
+    padding: 56px 72px 44px;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    color: var(--soft);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(220px, 0.8fr);
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 46px;
+  }
+
+  .title {
+    font-size: 88px;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    font-weight: 750;
+    color: var(--text);
+    margin-bottom: 18px;
+  }
+
+  .subtitle {
+    max-width: 690px;
+    font-size: 31px;
+    line-height: 1.7;
+    color: #4e5965;
+    letter-spacing: -0.01em;
+  }
+
+  .aside {
+    border-left: 2px solid rgba(69, 98, 127, 0.32);
+    padding-left: 24px;
+    padding-bottom: 8px;
+  }
+
+  .aside-label {
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: 0.18em;
+    color: var(--soft);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .aside-text {
+    font-size: 24px;
+    line-height: 1.72;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--rule);
+    margin: 0 0 40px;
+  }
+
+  .body {
+    max-width: 852px;
+  }
+
+  .body p {
+    font-size: 29px;
+    line-height: 1.86;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .body .muted {
+    color: #56616d;
+  }
+
+  .highlight {
+    margin: 34px 0 38px;
+    padding: 22px 26px 24px 30px;
+    border-left: 4px solid var(--accent);
+    background: linear-gradient(90deg, rgba(69, 98, 127, 0.06), rgba(69, 98, 127, 0.00));
+  }
+
+  .highlight p {
+    font-size: 47px;
+    line-height: 1.45;
+    font-weight: 650;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .section {
+    margin: 42px 0;
+  }
+
+  .section-title {
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    color: var(--soft);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .skill-rail {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 14px 26px;
+    max-width: 900px;
+    margin-top: 20px;
+  }
+
+  .chip {
+    display: inline-block;
+    width: fit-content;
+    padding: 8px 14px 9px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font: 600 22px/1.3 "SFMono-Regular", "Menlo", "Consolas", monospace;
+    letter-spacing: -0.01em;
+  }
+
+  .skill-desc {
+    font-size: 28px;
+    line-height: 1.75;
+    color: #2c3640;
+    padding-top: 2px;
+  }
+
+  .transition {
+    margin: 46px 0;
+    padding: 28px 30px 14px;
+    background: rgba(248, 250, 252, 0.72);
+    border: 1px solid rgba(69, 98, 127, 0.08);
+    box-shadow: 0 16px 40px -26px var(--shadow);
+  }
+
+  .shift-row {
+    display: grid;
+    grid-template-columns: 1fr 54px 1.15fr;
+    gap: 14px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .shift-row:last-child {
+    border-bottom: none;
+  }
+
+  .from,
+  .to {
+    font-size: 27px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  .from {
+    color: var(--muted);
+  }
+
+  .to {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .arrow {
+    text-align: center;
+    color: var(--accent);
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .closing {
+    margin-top: 50px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .closing .final {
+    font-size: 44px;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+
+  .closing .after {
+    font-size: 28px;
+    line-height: 1.85;
+    color: #3f4b57;
+    margin-bottom: 0;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 54px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--soft);
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="meta">
+      <span>GF Skills Course</span>
+      <span>Lesson 9 / Final Reveal</span>
+    </div>
+
+    <div class="hero">
+      <div>
+        <div class="title">看见红线</div>
+        <div class="subtitle">这套课真正想给你的，不是多一把 skill，而是一副能看见工法的护目镜。</div>
+      </div>
+      <div class="aside">
+        <div class="aside-label">Final Shift</div>
+        <div class="aside-text">不是再学一个工具。<br>而是终于开始看见，结果背后那张布线图。</div>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="body">
+      <div class="highlight">
+        <p>你不是死在陷阱里。<br>你是死在看不见红线。</p>
+      </div>
+
+      <p>第一次用 <span class="chip">ljg-rank</span>、<span class="chip">ljg-plain</span>、<span class="chip">ljg-card</span> 的时候，你看到的是结果：骨架出来了，语言顺了，卡片成型了。你会想，真厉害。</p>
+
+      <p class="muted">后来你才慢慢明白。厉害的不是一句 prompt。厉害的是一套能反复复现的顺序。</p>
+
+      <div class="section">
+        <div class="section-title">What The Tools Were Doing</div>
+        <div class="skill-rail">
+          <div><span class="chip">ljg-rank</span></div>
+          <div class="skill-desc">先砍骨架，让复杂东西先站稳。</div>
+
+          <div><span class="chip">ljg-plain</span></div>
+          <div class="skill-desc">先卸术语，让意思先落地。</div>
+
+          <div><span class="chip">ljg-learn</span></div>
+          <div class="skill-desc">再往下挖一层，把“知道”推到“恍然大悟”。</div>
+
+          <div><span class="chip">ljg-writes</span></div>
+          <div class="skill-desc">把一个意思写到别人那里，而不只是写得顺。</div>
+
+          <div><span class="chip">ljg-card</span></div>
+          <div class="skill-desc">把理解压成可带走、可分享、可继续传播的成品。</div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <p>更重要的是，<br>这八课里的很多讲义、练习、讲法和卡片，<br>本身就是用这些 skills 做出来的。</p>
+      </div>
+
+      <p>所以你不是只在学工具。你是在一个由工具搭出来的学习环境里，被工具一步一步教会怎么使用工具。</p>
+
+      <p>这套课最后想完成的，不是让你更会调命令，而是让你从等结果的人，变成会看工法的人；从踩陷阱的人，变成会布线的人。</p>
+
+      <div class="transition">
+        <div class="section-title">From Player To Builder</div>
+
+        <div class="shift-row">
+          <div class="from">以前只盯着输出</div>
+          <div class="arrow">→</div>
+          <div class="to">现在会反过来问：它刚才怎么做到的？</div>
+        </div>
+
+        <div class="shift-row">
+          <div class="from">以前只想拿答案</div>
+          <div class="arrow">→</div>
+          <div class="to">现在开始看见顺序、工法和解锁时刻</div>
+        </div>
+
+        <div class="shift-row">
+          <div class="from">以前只是使用工具</div>
+          <div class="arrow">→</div>
+          <div class="to">现在已经开始能设计别人的学习体验</div>
+        </div>
+      </div>
+
+      <div class="closing">
+        <p class="final">课程结束，不是因为没东西可讲了。<br>而是因为你已经看见红线了。</p>
+        <p class="after">接下来，轮到你布线了。</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>不是魔法，是工法。</span>
+      <span>GF Skills Course</span>
+    </div>
+  </div>
+</body>
+</html>

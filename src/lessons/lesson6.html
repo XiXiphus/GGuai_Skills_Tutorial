@@ -1,0 +1,113 @@
+<section class="lesson-section" id="lesson6">
+    <div class="lesson-header">
+        <span class="lesson-tag">Lesson 06</span>
+        <h1 class="lesson-title">Card 成器 · 铸图为证</h1>
+        <p class="lesson-intro">把一段理解变成一个别人愿意看、愿意转的成品。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>直觉引入</h2>
+        <p>你有没有过这种经历——读完一本书，想分享一个观点，打了两百字发出去，却没人回应？</p>
+        <p>不是你的观点不好，是形式没跟上。纯文字在信息流里太容易被划过去了。</p>
+        <p>但一张卡片不一样。它有边界、有结构、有一个瞬间能抓住人的点。同样的内容，放进卡片里，传播力会突然变强。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>不是所有内容都值得做卡片</h2>
+        <p>先说什么时候<strong>不要</strong>硬做。</p>
+        <ul>
+            <li>你自己还在混乱中、没想清楚的时候，别做卡片。卡片是成品，不是琢磨的过程。</li>
+            <li>内容太私人、没有公共价值的时候，别做卡片。日记适合写日记，不适合做成卡。</li>
+            <li>信息密度太低、一句话就能说完的时候，别做卡片。直接发文字更快。</li>
+        </ul>
+
+        <p>值得做卡片的情况：</p>
+        <ul>
+            <li>你有了一个相对完整的理解，想让它被记住</li>
+            <li>你想把一个复杂的想法，压缩成一个可传播的单位</li>
+            <li>你想给某个主题一个「视觉锚点」——以后提到它，别人能想到那张图</li>
+        </ul>
+    </div>
+
+    <div class="content-block">
+        <h2>ljg-card 的三种常用模式</h2>
+        <p><span class="skill-tag">ljg-card</span> 不是「把字贴到图上」。它是把文字重新组织成一种视觉结构。</p>
+
+        <h3>-l（long，长阅读卡）</h3>
+        <p>适合：有层次的理解，比如一个概念的三层拆解、一个问题的来龙去脉。</p>
+        <p>特点：可以容纳 200-400 字的正文，像一篇微型文章，但有视觉边界。</p>
+        <button class="try-btn" data-action="open-terminal" data-terminal-command="/ljg-card -l 把这段话做成卡片：卡片不是思考，卡片是想清楚之后交出去的东西。做卡片之前先问自己，想完了吗？别人看了有用吗？信息量够吗？">试一试：生成一张长图卡片</button>
+
+        <h3>-i（infograph，信息图）</h3>
+        <p>适合：关系复杂、需要一目了然的内容。比如几个概念之间的对比、一个流程的步骤、一个系统的组成部分。</p>
+        <p>特点：文字更少，结构更突出，看图的人能在 3 秒内抓住骨架。</p>
+
+        <h3>-m（multi，多卡片）</h3>
+        <p>适合：一个主题有太多切面，一张卡说不完。比如一本书的十个洞察、一个事件的多个角度。</p>
+        <p>特点：生成一组卡片，每张讲一个点，整体形成系列感。</p>
+    </div>
+
+    <div class="content-block">
+        <h2>什么样的文字适合做卡片源</h2>
+        <p>卡片源不是「写好的文章」。它是「为卡片准备的原材」。</p>
+        <p>好卡片源的特征：</p>
+        <ul>
+            <li>有一个明确的主题句（一句话说清楚这张图在讲什么）</li>
+            <li>有 2-4 个支撑点（不能太多，多了卡片会满）</li>
+            <li>每个支撑点是一句完整的话，而不是词或碎片</li>
+            <li>整体有逻辑推进（从问题到答案、从现象到原因、从旧认知到新认知）</li>
+        </ul>
+    </div>
+
+    <div class="content-block">
+        <h2>改写示例：从坏卡片源到好卡片源</h2>
+        
+        <h3>坏卡片源（太满、太散）</h3>
+        <div class="code-block">卡片这种东西其实挺有意思的，我做了一段时间发现，其实卡片主要是用来分享的，当然也可以自己留着看，不过我觉得重点还是怎么让人看懂。然后卡片的种类有很多，我自己用过几种，感觉各有优劣吧。有时候文字多有时候文字少，看情况。做卡片的时候要注意排版，不要太乱，颜色也要协调，不过我觉得内容更重要。</div>
+        <p>问题在哪？</p>
+        <ul>
+            <li>没有主题句，不知道这段话想说什么</li>
+            <li>信息重复（「分享/自己看」、「文字多/文字少」）</li>
+            <li>全是模糊感受，没有具体判断标准</li>
+            <li>没有推进逻辑，像是随口闲聊</li>
+        </ul>
+
+        <h3>好卡片源（清晰、可执行）</h3>
+        <div class="code-block">做卡片之前，先判断三件事：
+
+1. 内容是否已经完成思考？卡片是成品，不是草稿。
+2. 是否有公共价值？私人日记不必做成卡片。
+3. 密度是否足够？一句话能说清的，直接发文字。
+
+想清楚这三点，再选模式。文字带层次的用 -l，关系复杂的用 -i，切面太多的用 -m。</div>
+        <p>改进在哪？</p>
+        <ul>
+            <li>第一句就是主题：做卡片前要判断</li>
+            <li>三个点并列清晰，每个点是一句完整的话</li>
+            <li>从「判断是否值得做」推进到「选什么模式」，有逻辑流动</li>
+            <li>没有废话，每个字都服务于理解</li>
+        </ul>
+    </div>
+
+    <!-- Exercise -->
+    <div class="exercise-section">
+        <h3 class="exercise-title">Lesson 06 Drill</h3>
+        <p class="exercise-subtitle">卡片源的准备与选择</p>
+
+        <div class="question-card">
+            <div class="question-number">1</div>
+            <p class="question-text"><strong>删改练习：</strong>下面这段文字太满太散了，请改写成符合「好卡片源三要素」的文案。<br><br>「最近发现很多人都在说要早起，我也试了一下，感觉确实不错。早起能让人感觉一天变长了，而且早上很安静，适合做一些需要专注的事情。不过早起的前提是要早睡，不然白天会很困。我觉得大家都可以试试早起，真的能改变生活状态。对了，早起还可以看看日出，心情会很好。」</p>
+            <textarea class="text-answer" placeholder="改写后的卡片源："></textarea>
+            <button class="btn btn-primary" style="margin-top: 16px;" onclick="gradeSubjective(this, '评分重点：1. 是否提炼出了明确的主题句；2. 是否梳理出了清晰的支撑点；3. 是否删掉了废话和口水词。')">提交回答</button>
+            <div class="ai-feedback"></div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-number">2</div>
+            <p class="question-text"><strong>压缩练习：</strong>请把 Lesson 05 的核心内容，压成一段适合交给 <span class="skill-tag">ljg-card -l</span> 的卡片源（不超过 150 字）。</p>
+            <textarea class="text-answer" placeholder="Lesson 05 卡片源："></textarea>
+            <button class="btn btn-primary" style="margin-top: 16px;" onclick="gradeSubjective(this, '评分重点：1. 主题句是否抓住了第五课的核心（写作是把意思走到别人那里）；2. 支撑点是否包含了 ljg-writes 的价值；3. 整体是否有逻辑流动。')">提交回答</button>
+            <div class="ai-feedback"></div>
+        </div>
+    </div>
+</section>

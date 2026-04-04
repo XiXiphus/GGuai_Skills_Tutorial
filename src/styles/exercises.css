@@ -1,0 +1,401 @@
+        /* Exercise Section */
+        .exercise-section {
+            background: linear-gradient(135deg, #f8f6f3 0%, #f0ece5 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 32px;
+        }
+
+        .exercise-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .exercise-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .question-card {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .question-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .question-text {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .answer-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--bg-warm);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-label:hover {
+            background: var(--highlight);
+        }
+
+        .option-label input[type="radio"] {
+            margin-top: 3px;
+        }
+
+        .text-answer {
+            width: 100%;
+            min-height: 100px;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+        }
+
+        .text-answer:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+
+/* Auto-grading Choice Questions */
+.option-label.correct {
+    background-color: rgba(90, 143, 110, 0.15);
+    border-left: 4px solid var(--success);
+}
+
+.option-label.incorrect {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+}
+
+.question-card.unanswered {
+    border: 2px solid #ffc107;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+    position: relative;
+}
+
+.question-card.unanswered::before {
+    content: '⚠️ 请完成此题';
+    position: absolute;
+    top: -12px;
+    right: 16px;
+    background: #ffc107;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.score-display {
+    font-size: 1.2rem;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.draft-save-status {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.draft-save-status[data-tone="saved"] {
+    color: var(--secondary);
+}
+
+.draft-save-status[data-tone="restored"] {
+    color: var(--primary);
+}
+
+/* AI Feedback Panel */
+.ai-feedback {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.ai-feedback h2 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.ai-feedback h2:first-child {
+    margin-top: 0;
+}
+
+.ai-feedback ul {
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+.ai-feedback li {
+    margin-bottom: 6px;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.loading::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--secondary);
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error-text {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.info-text {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.static-feedback {
+    padding-top: 8px;
+}
+
+.static-feedback h4 {
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+/* Multi-turn Chat Area */
+.chat-section {
+    margin-top: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+}
+
+.chat-history {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.chat-bubble {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.user-bubble {
+    align-self: flex-end;
+    background: var(--primary);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.ai-bubble {
+    align-self: flex-start;
+    background: white;
+    border: 1px solid var(--border);
+    border-bottom-left-radius: 4px;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 8px;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.chat-send-btn {
+    padding: 10px 20px;
+}
+
+/* Collapsible Answers (details/summary) */
+details.scenario-answer {
+    margin-top: 16px;
+    background: var(--bg-warm);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+details.scenario-answer summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--secondary);
+    user-select: none;
+    outline: none;
+}
+
+details.scenario-answer summary:hover {
+    background: var(--highlight);
+}
+
+.scenario-content {
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    background: white;
+}
+
+.scenario-content p {
+    margin-bottom: 12px;
+}
+
+.scenario-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Streaming cursor animation */
+.streaming-target.streaming::after {
+    content: '▊';
+    display: inline;
+    animation: blink 0.7s steps(2) infinite;
+    color: var(--secondary);
+    font-weight: 300;
+}
+
+.streaming-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background: var(--secondary);
+    animation: blink 0.7s steps(2) infinite;
+    vertical-align: text-bottom;
+    border-radius: 1px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Regenerate button */
+.chat-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.regenerate-btn {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+}
+
+/* Chat textarea auto-grow */
+.chat-input-area textarea.chat-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: none;
+    min-height: 40px;
+    max-height: 120px;
+    line-height: 1.4;
+    overflow-y: auto;
+}
+
+.chat-input-area textarea.chat-input:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+/* Streaming result container */
+.ai-grading-result {
+    min-height: 40px;
+}
+
+.ai-grading-result h2 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.ai-grading-result h2:first-child {
+    margin-top: 0;
+}
+
+.ai-grading-result ul {
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+.ai-grading-result li {
+    margin-bottom: 6px;
+}
+
+/* Retry button */
+.retry-btn {
+    margin-top: 12px;
+}
