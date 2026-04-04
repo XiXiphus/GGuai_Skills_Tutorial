@@ -6,6 +6,28 @@ import './styles/gallery.css';
 import './styles/home.css';
 import './styles/terminal.css';
 
+import { marked } from 'marked';
+
+// 配置 marked 安全选项：禁用可能危险的 HTML 标签
+marked.use({
+    gfm: true,
+    breaks: true,
+    // 禁用原始 HTML，只允许 Markdown 语法
+    sanitize: true,
+    // 自定义渲染器，过滤危险标签
+    renderer: {
+        html(text) {
+            // 只允许特定的安全 HTML 标签
+            const allowedTags = /^(<(b|i|em|strong|code|pre|p|br|ul|ol|li|h[1-6]|blockquote)[^>]*>)|(<\/(b|i|em|strong|code|pre|p|ul|ol|li|h[1-6]|blockquote)>)$/i;
+            if (allowedTags.test(text.trim())) {
+                return text;
+            }
+            // 其他 HTML 转义显示
+            return text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+    }
+});
+
 import {
     checkUnlocks,
     getCompletedLessons,
