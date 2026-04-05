@@ -16,6 +16,10 @@ export let completedLessons = loadCompletedLessons();
 let exerciseState = loadExerciseState();
 let exerciseDrafts = loadExerciseDrafts();
 
+function persistCompletedLessons() {
+    localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+}
+
 function loadCompletedLessons() {
     try {
         const raw = JSON.parse(localStorage.getItem('completedLessons') || '[]');
@@ -154,6 +158,56 @@ export function getCompletedLessons() {
     return completedLessons;
 }
 
+function areAllExercisesCompletedForLesson(sectionId) {
+    const exercises = getExercisesForLesson(sectionId);
+    return exercises.length > 0 && exercises.every((exercise) => isExerciseCompleted(exercise.id));
+}
+
+function syncCompletedLessonsFromExerciseState() {
+    let didChange = false;
+
+    courseSections.forEach((section) => {
+        if (!section.lessonNumber || completedLessons.includes(section.lessonNumber)) {
+            return;
+        }
+
+        if (!areAllExercisesCompletedForLesson(section.id)) {
+            return;
+        }
+
+        completedLessons.push(section.lessonNumber);
+        didChange = true;
+    });
+
+    if (didChange) {
+        completedLessons.sort((a, b) => a - b);
+        persistCompletedLessons();
+    }
+
+    return didChange;
+}
+
+function completeLessonFromExerciseState(sectionId, { animate = false } = {}) {
+    const lessonNum = getSectionMeta(sectionId)?.lessonNumber;
+    if (!lessonNum || completedLessons.includes(lessonNum)) {
+        return false;
+    }
+
+    if (!areAllExercisesCompletedForLesson(sectionId)) {
+        return false;
+    }
+
+    completedLessons.push(lessonNum);
+    completedLessons.sort((a, b) => a - b);
+    persistCompletedLessons();
+
+    if (animate) {
+        triggerCardUnlockAnimation(lessonNum);
+    }
+
+    return true;
+}
+
 export function getExerciseState(exerciseId) {
     return exerciseState[exerciseId] || null;
 }
@@ -181,6 +235,11 @@ export function markExerciseCompleted(exerciseId, metadata = {}) {
         status: 'completed',
         completed: true
     });
+
+    const lessonId = metadata.lessonId || exerciseState[exerciseId]?.lessonId;
+    if (lessonId && completeLessonFromExerciseState(lessonId, { animate: true })) {
+        checkUnlocks();
+    }
 }
 
 export function markExerciseIncomplete(exerciseId, metadata = {}) {
@@ -316,7 +375,7 @@ export function markLessonCompleted(lessonNum) {
     if (!completedLessons.includes(lessonNum)) {
         completedLessons.push(lessonNum);
         completedLessons.sort((a, b) => a - b);
-        localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+        persistCompletedLessons();
         triggerCardUnlockAnimation(lessonNum);
         checkUnlocks();
     }
@@ -414,6 +473,8 @@ export function checkUnlocks() {
     unlockCheckPending = true;
     
     try {
+        syncCompletedLessonsFromExerciseState();
+
         document.querySelectorAll('.nav-link[data-section]').forEach(link => {
             const sectionId = link.dataset.section;
             const sectionMeta = getSectionMeta(sectionId);
